@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-language" content="en" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+	<link rel="apple-touch-icon" href="images/icon.png" />
+	<link rel="apple-touch-startup-image" href="images/splash.png">
+	
+	<link rel="stylesheet" media="screen" type="text/css" href="css/reset.css" />	
+	<link rel="stylesheet" media="screen" type="text/css" href="css/main.css" />
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	<title>View Events</title>
+</head>
+
+<body onorientationchange="Orientation();">
+
+<div id="wrapper">
+
+	<!-- HEADER -->
+	<div id="header">
+	
+		<h1 id="logo">View Events</h1>
+
+		<p class="header-button left"><a href="javascript:history.go(-1)" onclick="return link(this)">Back</a></p>
+		
+		<p class="header-button"><a href="index.html" onclick="return link(this)">Home</a></p>
+		
+	</div> <!-- /header -->
+	
+	<!-- CONTENT -->
+	<div id="content">
+
+		<div class="content-box alt">
+			
+			<p>There are <strong>3 Events</strong>.</p>
+		
+		</div> <!-- /content-box -->
+	
+		<!-- CONTACTS -->
+		<div class="content-box">
+			
+			<table class="contacts">
+				<tr>
+					<th>
+					<td>
+						<strong><a href="#" onclick="return link(this)">IEEE Meeting 1</a></strong><br />
+						<span class="smaller grey">1/12/2015 &nbsp;|&nbsp; Points: 1</span>
+					</td>
+					</th>
+				</tr>
+				<tr>
+					<th>
+					<td>
+						<strong><a href="#" onclick="return link(this)">IEEE Meeting 2</a></strong><br />
+						<span class="smaller grey">1/19/2015 &nbsp;|&nbsp; Points: 2</span>
+					</td></th>
+				</tr>
+				<tr>
+					<th>
+					<td>
+						<strong><a href="#" onclick="return link(this)">IEEE Meeting 3</a></strong><br />
+						<span class="smaller grey">1/26/2015 &nbsp;|&nbsp; Points: 3</span>
+					</td></th>
+				</tr>
+				
+			</table>
+
+		</div> <!-- /content-box -->			
+			
+		
+
+		<!-- NAVIGATION -->
+		
+		
+	</div> <!-- /content -->
+	
+	<!-- FOOTER -->
+	
+
+</div> <!-- /wrapper -->
+
+</body>
+</html>

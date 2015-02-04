@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-language" content="en" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+	<link rel="apple-touch-icon" href="images/icon.png" />
+	<link rel="apple-touch-startup-image" href="images/splash.png">
+	
+	<link rel="stylesheet" media="screen" type="text/css" href="css/reset.css" />	
+	<link rel="stylesheet" media="screen" type="text/css" href="css/main.css" />
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	<title>Admin</title>
+</head>
+
+<body onorientationchange="Orientation();">
+
+<div id="wrapper">
+
+	<!-- HEADER -->
+	<div id="header">
+	
+		<h1 id="logo">Create Event</h1>
+
+		<p class="header-button left"><a href="javascript:history.go(-1)" onclick="return link(this)">Back</a></p>
+		
+		<p class="header-button"><a href="dashboard.html" onclick="return link(this)">Home</a></p>
+		
+	</div> <!-- /header -->
+	
+	<!-- CONTENT -->
+	<div id="content">
+
+		<div class="content-box alt">
+			
+			<p>There are <strong>0 events.</strong>.</p>
+		
+		</div> <!-- /content-box -->
+
+		<!-- NEW PAGE -->
+		<div class="content-box">		
+		
+			<form action="process.php" method="POST">
+
+				<dl>
+					<dt><input type="hidden" value="addEvent" name="specialSelect"/></dt>
+					<dt>Event:</dt>
+					<dd><input type="text" size="30" name="event" class="input-text" /></dd>
+					
+					<dt>Date:</dt>
+					<dd>
+						<select name=day>
+							<option value="dd">DD</option>
+							<option value='01'>01</option>
+							<option value='02'>02</option>
+							<option value='03'>03</option>
+							<option value='04'>04</option>
+							<option value='05'>05</option>
+							<option value='06'>06</option>
+							<option value='07'>07</option>
+							<option value='08'>08</option>
+							<option value='09'>09</option>
+							<option value='10'>10</option>
+							<option value='11'>11</option>
+							<option value='12'>12</option>
+							<option value='13'>13</option>
+							<option value='14'>14</option>
+							<option value='15'>15</option>
+							<option value='16'>16</option>
+							<option value='17'>17</option>
+							<option value='18'>18</option>
+							<option value='19'>19</option>
+							<option value='20'>20</option>
+							<option value='21'>21</option>
+							<option value='22'>22</option>
+							<option value='23'>23</option>
+							<option value='24'>24</option>
+							<option value='25'>25</option>
+							<option value='26'>26</option>
+							<option value='27'>27</option>
+							<option value='28'>28</option>
+							<option value='29'>29</option>
+							<option value='30'>30</option>
+							<option value='31'>31</option>
+						</select>
+						
+						<select name=month>
+							<option value='00'>Month</option>
+							<option value='01'>January</option>
+							<option value='02'>February</option>
+							<option value='03'>March</option>
+							<option value='04'>April</option>
+							<option value='05'>May</option>
+							<option value='06'>June</option>
+							<option value='07'>July</option>
+							<option value='08'>August</option>
+							<option value='09'>September</option>
+							<option value='10'>October</option>
+							<option value='11'>November</option>
+							<option value='12'>December</option>
+						</select>
+						
+						<select name="year">
+							<option value="0000">Year</option>
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+						</select>
+
+					</dd>
+					
+					<dt>Time:</dt>
+					<dd>
+						<select name="hour">
+							<option value='HH'>HH</option>
+							<option value='01'>01</option>
+							<option value='02'>02</option>
+							<option value='03'>03</option>
+							<option value='04'>04</option>
+							<option value='05'>05</option>
+							<option value='06'>06</option>
+							<option value='07'>07</option>
+							<option value='08'>08</option>
+							<option value='09'>09</option>
+							<option value='10'>10</option>
+							<option value='11'>11</option>
+							<option value='12'>12</option>
+						</select>	
+						
+						<select name="minute">
+							<option value='MM'>MM</option>
+							<option value='01'>01</option>
+							<option value='02'>02</option>
+							<option value='03'>03</option>
+							<option value='04'>04</option>
+							<option value='05'>05</option>
+							<option value='06'>06</option>
+							<option value='07'>07</option>
+							<option value='08'>08</option>
+							<option value='09'>09</option>
+							<option value='10'>10</option>
+							<option value='11'>11</option>
+							<option value='12'>12</option>
+							<option value='13'>13</option>
+							<option value='14'>14</option>
+							<option value='15'>15</option>
+							<option value='16'>16</option>
+							<option value='17'>17</option>
+							<option value='18'>18</option>
+							<option value='19'>19</option>
+							<option value='20'>20</option>
+							<option value='21'>21</option>
+							<option value='22'>22</option>
+							<option value='23'>23</option>
+							<option value='24'>24</option>
+							<option value='25'>25</option>
+							<option value='26'>26</option>
+							<option value='27'>27</option>
+							<option value='28'>28</option>
+							<option value='29'>29</option>
+							<option value='30'>30</option>
+							<option value='31'>31</option>
+							<option value='32'>32</option>
+							<option value='33'>33</option>
+							<option value='34'>34</option>
+							<option value='35'>35</option>
+							<option value='36'>36</option>
+							<option value='37'>37</option>
+							<option value='38'>38</option>
+							<option value='39'>39</option>
+							<option value='40'>40</option>
+							<option value='41'>41</option>
+							<option value='42'>42</option>
+							<option value='43'>43</option>
+							<option value='44'>44</option>
+							<option value='45'>45</option>
+							<option value='46'>47</option>
+							<option value='48'>48</option>
+							<option value='49'>49</option>
+							<option value='50'>50</option>
+							<option value='51'>51</option>
+							<option value='52'>52</option>
+							<option value='53'>53</option>
+							<option value='54'>54</option>
+							<option value='55'>55</option>
+							<option value='56'>56</option>
+							<option value='57'>57</option>
+							<option value='58'>58</option>
+							<option value='59'>59</option>
+						</select>
+	
+						<select name="ampm">
+							<option>AM</option>
+							<option>PM</option>
+						</select>	
+					</dd>
+
+					<dt>Comments:</dt>
+					<dd><textarea cols="80" rows="7" class="input-text" name="comment"></textarea></dd>
+
+				</dl>
+					
+				<p class="nomb"><input type="submit" value="Create Event" class="input-submit" /></p>
+
+			</form>
+		
+		</div> <!-- /content-box -->		
+				
+			</div> <!-- /content -->
+	
+	<!-- FOOTER -->
+	<div id="footer">
+		
+	</div> <!-- /footer -->
+
+</div> <!-- /wrapper -->
+
+</body>
+</html>
