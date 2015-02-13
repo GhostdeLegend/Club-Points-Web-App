@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TTU IEEE Pro Points</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_home">Home</string>
+    <string name="action_points">Points</string>
+    <string name="action_events">Events</string>
+    <string name="action_students">Students</string>
+    <string name="action_labs">Labs</string>
+    <string name="title_activity_admin">adminActivity</string>
+
+</resources>

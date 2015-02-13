@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hhandfriendsapps.ttuieeepropoints.MainActivity">
+    <item android:id="@+id/action_home"
+        android:title="@string/action_home"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_points"
+        android:title="@string/action_points"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_events"
+        android:title="@string/action_events"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_students"
+        android:title="@string/action_students"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_labs"
+        android:title="@string/action_labs"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>
