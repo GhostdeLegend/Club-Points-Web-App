@@ -5,9 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 
 public class HeadsetStateReceiver extends BroadcastReceiver {
-	RhombusActivity activity;
+	AudioMonitorActivity activity;
 	
-	public HeadsetStateReceiver(RhombusActivity activity){
+	public HeadsetStateReceiver(AudioMonitorActivity activity){
 		this.activity = activity;
 	}
 
