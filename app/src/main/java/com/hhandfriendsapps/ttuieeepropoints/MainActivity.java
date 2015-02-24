@@ -48,6 +48,9 @@ public class MainActivity extends ActionBarActivity implements AudioMonitorActiv
     private AudioMonitor mAudioMonitor;
     private AudioDecoder mAudioDecoder;
 
+    private Runnable mRunnableOutput;
+    private Thread mOutputStringThread;
+
     public String rNumber;
 
 
@@ -76,12 +79,21 @@ public class MainActivity extends ActionBarActivity implements AudioMonitorActiv
         mIntentFilter.addAction(Intent.ACTION_HEADSET_PLUG);
 
         mAudioMonitorThread = new Thread();
+        mOutputStringThread = new Thread();
 
         mRunnable = new Runnable() {
             @Override
             public void run() {
                 mAudioMonitor.monitor();
                 System.out.println("At the end");
+
+            }
+        };
+
+        mRunnableOutput = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Output Runnable");
 
                 Instrumentation instrumentation = new Instrumentation();
                 view.requestFocus();
@@ -95,8 +107,8 @@ public class MainActivity extends ActionBarActivity implements AudioMonitorActiv
                             System.out.println("Inside Do");
                             System.out.println(rNumber.charAt(i));
 
-                            instrumentation.sendCharacterSync(KeyEvent.KEYCODE_0);
-                            System.out.println(rNumber.charAt(i));
+                            //instrumentation.sendCharacterSync(KeyEvent.KEYCODE_0);
+                            //System.out.println(rNumber.charAt(i));
                             switch (rNumber.charAt(i)) {
                                 case '0':
                                     instrumentation.sendCharacterSync(KeyEvent.KEYCODE_0);
@@ -252,6 +264,18 @@ public class MainActivity extends ActionBarActivity implements AudioMonitorActiv
         mAudioMonitorThread.start();
     }
 
+    private void outputString(){
+        System.out.println("Output String");
+
+        try{
+            mOutputStringThread.join();
+        } catch (InterruptedException e) {
+        }
+
+        mOutputStringThread = new Thread(mRunnableOutput);
+        mOutputStringThread.start();
+    }
+
     private void stopAudioMonitor() {
         System.out.println("Loc. 3");
         if (mAudioMonitor.isRecording()) {
@@ -302,7 +326,12 @@ public class MainActivity extends ActionBarActivity implements AudioMonitorActiv
 //      mTrackDataTextView.setText(data);
 
         rNumber = data;
-        rNumber = rNumber.substring(1,9);
+        if(rNumber.length() == 15) {
+            rNumber = rNumber.substring(1, 9);
+        }
+        System.out.println(rNumber);
+        outputString();
+        System.out.println("After Output");
     }
 
     private void hideMessage() {
